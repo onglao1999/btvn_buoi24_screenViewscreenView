@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var scrollViewTop: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollViewBottom: UIScrollView!
     var views = [CustomView]()
     var image = [UIImage]()
@@ -24,6 +25,11 @@ class ViewController: UIViewController {
         setupScrollWithImage(image)
         data2()
         setupScrolWithCustomView(views)
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = views.count
+        pageControl.pageIndicatorTintColor = .gray
+        pageControl.currentPageIndicatorTintColor = .purple
+        scrollViewTop.delegate = self as? UIScrollViewDelegate
     }
     func data(){
         image = [
@@ -84,3 +90,9 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageIndex = round(scrollView.contentOffset.x/screenWidth)
+        pageControl.currentPage = Int(pageIndex)
+    }
+}

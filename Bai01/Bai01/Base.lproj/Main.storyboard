@@ -21,6 +21,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5g8-GJ-pmg">
                                 <rect key="frame" x="29" y="398.5" width="356" height="443.5"/>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lBZ-ed-hDL">
+                                <rect key="frame" x="188" y="341" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -36,6 +40,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="pageControl" destination="lBZ-ed-hDL" id="u06-n3-ZU8"/>
                         <outlet property="scrollViewBottom" destination="5g8-GJ-pmg" id="HLP-IA-jLp"/>
                         <outlet property="scrollViewTop" destination="LlR-VY-Qbr" id="SNj-kW-rQd"/>
                     </connections>
